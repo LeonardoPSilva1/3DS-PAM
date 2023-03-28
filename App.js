@@ -1,46 +1,29 @@
-import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react';
-import { View,TextInput, TouchableOpacity, Text, Image} from 'react-native';
-import estilo from './src/estilos';
-import { Feather } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+
+//componentes
+import Header from './src/componentes/header';
+import searchBar from './src/componentes/searchBar';
+
 
 export default function App() {
   return (
-    <View style = {estilo.container}>
-      <LinearGradient
-        colors = {['black','#FF4500']}
-        style = {estilo.gradientBackColor}
-      >
-        <Image source = {{uri:'https://img.ifunny.co/images/8fe6b91e0458fb7d63c99b61b9dd023759ee0810ce9d9696a192bc0a08093983_1.jpg'}}
-        style ={estilo.image}
-/>
+    <View style={styles.container}>
 
-    </LinearGradient>
-
-      <View style = {estilo.box}>
-        <View style = {estilo.viewIcons}>
-          <Feather name="user" size={24} color="black" />
-          <TextInput style = {estilo.input} placeholder='e-mail' />
-        </View>
-        <View style = {estilo.viewIcons}>
-          <Ionicons name="key-outline" size={24} color="black" />
-          <TextInput style = {estilo.input} placeholder='senha' />
-        </View>
-
-          <TouchableOpacity style = {{width:'80%'}}>
-            <LinearGradient
-              colors ={['#D2691E','#FF4500']}
-              style={estilo.button}
-              >
-                <Text style ={estilo.text} >Logar</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+      <Header />
+      <searchBar />
       
-      
-
-      </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#141A29',
+    alignItems: 'center',
+
+  },
+});
+
 
