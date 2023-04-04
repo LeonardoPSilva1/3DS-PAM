@@ -1,29 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import BannerFilmes from './src/components/bannerFilmes';
 
-//componentes
-import Header from './src/componentes/header';
-import searchBar from './src/componentes/searchBar';
-
+import Header from './src/components/header';
+import SearchBar from './src/components/searchbar';
 
 export default function App() {
   return (
     <View style={styles.container}>
-
-      <Header />
-      <searchBar />
-      
+     <Header></Header>
+     <SearchBar></SearchBar>
+     <BannerFilmes></BannerFilmes>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#141A29',
-    alignItems: 'center',
+    flex:1,
+    backgroundColor: '#141a29',
+    alignItems:"center"
 
+
+    
+    
   },
 });
-
-
